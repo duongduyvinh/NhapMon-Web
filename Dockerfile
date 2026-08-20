@@ -1,5 +1,5 @@
-# Bước 1: Môi trường build (dùng Maven và JDK 11)
-FROM maven:3.8.6-openjdk-11-slim AS build
+# Bước 1: Môi trường build (dùng Maven và JDK 17)
+FROM maven:3.8.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
 # Copy file cấu hình maven
@@ -11,8 +11,8 @@ COPY src ./src
 # Build code thành file .war
 RUN mvn clean package
 
-# Bước 2: Môi trường chạy (dùng Tomcat 9 và JRE 11)
-FROM tomcat:9.0-jdk11-openjdk-slim
+# Bước 2: Môi trường chạy (dùng Tomcat 9 và JRE 17)
+FROM tomcat:9.0-jre17-temurin
 
 # Xóa các app mặc định của Tomcat
 RUN rm -rf /usr/local/tomcat/webapps/*
