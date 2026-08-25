@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Murach's Java Servlets and JSP</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/main.css?v=3" type="text/css"/>
 </head>
 <body>
-<h1>Join our email list</h1>
-<p> To join our mail list, enter your name and address below</p>
-<form action="emailList" method="post">
-    <input type="hidden" name="action" value="add">
-    <label>Email:</label>
-    <input type="email" name="email" required><br>
-    <label>First Name: </label>
-    <input type="text" name="firstName" required><br>
-    <label>Last Name:</label>
-    <input type="text" name="lastName" required><br>
-    <label>&nbsp;</label>
-    <input type="submit" value="Join Now" id="submit">
-
-</form>
-
+<div class="container">
+    <h1>Join our email list</h1>
+    <p> To join our mail list, enter your name and address below</p>
+    <img src="image/meocon.jpg" alt="meosieudeptrai" width="600" height="500">
+    <h1>Survey</h1>
+    <p>If your have a moment, we'd appreciate it if you would fill out this survey</p>
+    <h1>Your information:</h1>
+    <form action="emailList" method="post">
+        <input type="hidden" name="action" value="add">
+        
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
+        
+        <label>First Name: </label>
+        <input type="text" name="firstName" required><br>
+        
+        <label>Last Name:</label>
+        <input type="text" name="lastName" required><br>
+        
+        <h1>How did you hear about us?</h1>
+        <input type="radio" id="Search_Engine" name="foudation" value="Search Engine"> <label for="Search_Engine">Search Engine</label><br>
+        <input type="radio" id="World_of_Mouth" name="foudation" value="World of Mouth"> <label for="World_of_Mouth">Word of Mouth</label><br>
+        <input type="radio" id="Social_Media" name="foudation" value="Social Media"> <label for="Social_Media">Social Media</label><br>
+        <input type="radio" id="Other" name="foudation" value="Other"> <label for="Other">Other</label><br>
+        
+        <h1>Would you like to receive announcements about new CDs and special offers?</h1>
+        <input type="checkbox" id="answer1" name="answer1" value="Yes, I'd like that"> <label for="answer1">Yes, I'd like that</label><br>
+        <input type="checkbox" id="answer2" name="answer2" value="Yes, please send me email announcement"> <label for="answer2">Yes, please send me email announcement</label><br>
+        
+        <label>Please contact me by:</label>
+        <select name="contact">
+            <option value="email">Email</option>
+            <option value="postal">Postal Mail</option>
+            <option value="both">Email or Post Mail</option>
+        </select><br>
+        
+        <label>&nbsp;</label>
+        <input type="submit" value="Join Now" id="submit">
+    </form>
+</div>
 </body>
 </html>

@@ -31,9 +31,21 @@ public class EmailListServlet extends HttpServlet {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
+            
+            // Nhận dữ liệu mới từ HTML
+            String foudation = request.getParameter("foudation");
+            String answer1 = request.getParameter("answer1");
+            String answer2 = request.getParameter("answer2");
+            String contact = request.getParameter("contact");
+
+            // Kiểm tra checkbox, nếu người dùng không tích thì giá trị sẽ bị null, ta chuyển về chuỗi rỗng
+            if (answer1 == null) answer1 = "";
+            if (answer2 == null) answer2 = "";
+            if (foudation == null) foudation = "";
+            if (contact == null) contact = "";
 
             // store data in User object and save User object in db
-            User user = new User(firstName, lastName, email);
+            User user = new User(firstName, lastName, email, foudation, answer1, answer2, contact);
 //            UserDB.insert(user);
 
             // set User object in request object and set URL
